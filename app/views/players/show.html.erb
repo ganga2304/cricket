@@ -1,0 +1,25 @@
+<h1 class="text-center mt-4">Show The player details of <%=@player.id %></h1>
+<div class="container">
+    <div class="col-10">
+    <div class="card text-center mt-5">
+        <div class="card-header">
+            Show details
+        </div>
+<div class="card-body">
+<p class="card-text"><b>playerName :</b><%= @player.name%></p>
+<p class="card-text"><b>playerAge :</b><%= @player.age%></p>
+<p class="card-text"><b>playerposition :</b><%= @player.position%></p>
+<p class="card-text"><b>playerteamName :</b><%= @player.team.name%></p>
+<p class="card-text"><b>playerrole :</b><%= @player.role%></p>
+<p class="card-text"><b>playeris_active :</b><%= @player.is_active%></p>
+<p class="card-text"><b>playeris_captain:</b><%= @player.is_captain%></p>
+<p class="card-text"><b>playerDescription :</b><%= @player.description%></p> 
+<div>
+  <%= link_to "Edit this player", edit_player_path(@player) %> |
+  <%= link_to "Back to players", players_path %>
+  <%= button_to "Destroy this player", @player, method: :delete %>
+</div>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,20 @@
+<h1 class="text-center mt-4">Show The team details of <%=@team.id %></h1>
+<div class="container">
+    <div class="col-10">
+    <div class="card text-center mt-5">
+        <div class="card-header">
+            Show details
+        </div>
+<div class="card-body">
+<p class="card-text"><b>teamName :</b><%= @team.name%></p>
+<p class="card-text"><b>teamFounded :</b><%= @team.founded%></p>
+<p class="card-text"><b>teamDescription :</b><%= @team.description%></p> 
+<div>
+  <%= link_to "Edit this team", edit_team_path(@team) %> |
+  <%= link_to "Back to teams", teams_path %>
+  <%= button_to "Destroy this team", @team, method: :delete %>
+</div>
+</div>
+</div>
+</div>
+
