@@ -2,6 +2,10 @@ class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
   def index
     @teams = Team.all
+    if params[:year]
+      @teams = Team.founded_after(params[:founded]) if params[:founded].present?
+      
+    end
   end
 
   def show

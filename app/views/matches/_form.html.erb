@@ -1,0 +1,44 @@
+<div class="container">
+  <%= form_with(model: @match, local: true) do |form| %>
+    <% if @match.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@match.errors.count, "error") %> prohibited this match from being saved:</h2>
+        <ul>
+          <% @match.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <div class="field">
+        <%= form.label :name, class: "form-label" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <div class="field">
+        <%= form.label :date, class: "form-label" %>
+        <%= form.datetime_select :date, {}, { class: "form-control" } %>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <div class="field">
+        <%= form.label :teams, class: "form-label" %>
+        <%= form.collection_check_boxes :team_ids, @teams, :id, :name do |team| %>
+          <div class="form-check">
+            <%= team.check_box(class: "form-check-input") %>
+            <%= team.label(class: "form-check-label") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

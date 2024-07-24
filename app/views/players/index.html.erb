@@ -49,7 +49,7 @@
         <td><%= player.description %></td>
         <td><%= link_to 'Show', player_path(player),class:"btn btn-outline-primary" %></td>
         <td><%= link_to 'Edit', edit_player_path(player),class:"btn btn-outline-info" %></td>
-        <td><%= link_to 'Destroy', player_path(player), data: { turbo_method: :delete },class:"btn btn-outline-danger" %></td>
+        <td><%= link_to 'Destroy', player_path(player),class:"btn btn-outline-info",data: { turbo_method: :delete }%></td>
       </tr>
     <% end %>
   </tbody>
