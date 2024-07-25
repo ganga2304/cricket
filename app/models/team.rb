@@ -1,6 +1,7 @@
 class Team < ApplicationRecord
     has_many :players, dependent: :destroy    
     has_and_belongs_to_many :matches
+    accepts_nested_attributes_for :players, allow_destroy: true
 
 
     validates :name, presence: true, uniqueness: true

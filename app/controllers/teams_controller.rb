@@ -14,9 +14,13 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @team.players.build # build nested players form
+    @matches = Match.all # for the match selection
   end
 
   def edit
+    @matches = Match.all # Ensure @matches is not nil
+
 
   end
 
