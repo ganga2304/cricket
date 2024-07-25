@@ -75,8 +75,9 @@ gem "rubocop-github", require: false
 gem "rubocop-performance", require: false
 gem "rubocop-rails", require: false
 gem 'rubocop-capybara'
-gem 'rubocop-rails'
 gem 'will_paginate', '~> 3.3'
 gem 'friendly_id', '~> 5.4'
+gem 'devise'
+
 
 

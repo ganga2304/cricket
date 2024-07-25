@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
-  resources :matches
-  resources :players
-  get 'teams/index'
-  get 'teams/show'
-  get 'teams/new'
-  get 'teams/edit'
-  get 'teams/create'
-  get 'teams/update'
-  get 'teams/destroy'
+  devise_for :users
+  get 'pages/index'
+  root 'pages#index' 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -16,8 +10,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :teams
-  resources :players
-  resources :posts
 
+  resources :matches
+  resources :players
+  resources :teams
+  resources :posts
 end
