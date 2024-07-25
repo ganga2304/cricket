@@ -1,0 +1,16 @@
+# .rubocop.yml
+
+require:
+  - rubocop-rails
+  - rubocop-capybara
+
+AllCops:
+  SuggestExtensions: false
+
+Rails:
+  Enabled: true
+
+Capybara:
+  Enabled: true
+
+# Add any custom rules or exclusions here
