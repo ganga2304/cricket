@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :teams
   resources :players
+  resources :posts
+
 end
